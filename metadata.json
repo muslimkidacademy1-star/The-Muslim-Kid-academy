@@ -1,0 +1,6 @@
+{
+  "name": "أكاديمية المسلم الصغير",
+  "description": "الموقع الرسمي لأكاديمية المسلم الصغير لتعليم وتحفيظ القرآن الكريم للأطفال بحصص فردية مباشرة عبر زووم",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
