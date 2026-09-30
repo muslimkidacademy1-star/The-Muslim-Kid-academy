@@ -4,7 +4,6 @@ import {
   Sparkles,
   ShieldCheck,
   Crown,
-  Users,
   Video
 } from 'lucide-react';
 
@@ -26,7 +25,7 @@ export const TrustStats: React.FC = () => {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -44,13 +43,12 @@ export const TrustStats: React.FC = () => {
     if (!hasAnimated) return;
 
     const teachersTarget = 80;
-    const duration = 1800; // ms
+    const duration = 1600;
     const startTime = performance.now();
 
     const animateCounters = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
       const easeOut = 1 - Math.pow(1 - progress, 3);
 
       setTeachersCount(Math.floor(easeOut * teachersTarget));
@@ -76,41 +74,37 @@ export const TrustStats: React.FC = () => {
       id: 1,
       prefix: '+',
       value: teachersCount,
-      target: '+80',
-      label: 'معلم ومعلمة',
+      label: 'معلم ومعلمة معتمدين',
       description: 'مؤهلون ومجازون بالقراءات وخريجو الأزهر الشريف',
       icon: GraduationCap,
-      color: 'bg-[#E6F7F8] text-[#187A82]',
+      color: 'bg-sky-50 text-sky-600',
     },
     {
       id: 2,
       prefix: '+',
       value: sessionsCount,
-      target: '+750',
-      label: 'حلقة قرآنية نشطة شهرياً',
-      description: 'تُبث فردياً ومباشرة عبر زووم بكل خصوصية وتركيز',
+      label: 'حلقة فردية نشطة شهرياً',
+      description: 'تُبث فردياً ومباشرة عبر زووم بكامل الخصوصية والتركيز',
       icon: Video,
-      color: 'bg-[#FEF3C7] text-[#D97706]',
+      color: 'bg-amber-50 text-amber-600',
     },
     {
       id: 3,
       prefix: '',
       value: supervisorsCount,
-      target: '8',
       label: 'مشرفين متخصصين',
-      description: 'لمتابعة جودة الحلقات والتزام المعلمين وتقدم الطلاب',
+      description: 'متابعة حية لجودة الحلقات والتزام المعلمين والطلاب',
       icon: ShieldCheck,
-      color: 'bg-[#E0F2FE] text-[#0284C7]',
+      color: 'bg-emerald-50 text-emerald-600',
     },
     {
       id: 4,
       prefix: '',
       value: generalSupervisorCount,
-      target: '1',
       label: 'مشرف عام تربوي',
-      description: 'يتابع المنظومة كاملة لضمان أعلى معايير الإتقان',
+      description: 'يتابع المنظومة كاملة لضمان أسمى معايير الإتقان',
       icon: Crown,
-      color: 'bg-[#F3E8FF] text-[#9333EA]',
+      color: 'bg-purple-50 text-purple-600',
     },
   ];
 
@@ -118,67 +112,62 @@ export const TrustStats: React.FC = () => {
     <section
       id="stats"
       ref={sectionRef}
-      className="py-16 sm:py-20 bg-[#0F4F55] text-white relative overflow-hidden"
+      className="py-14 sm:py-18 bg-white border-y border-slate-200/80 relative"
     >
-      {/* Background Subtle Teal Glows */}
-      <div className="absolute top-0 right-10 w-96 h-96 bg-[#187A82]/25 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-96 h-96 bg-[#23949D]/20 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-[#A5F3FC] border border-white/15 text-xs sm:text-sm font-bold">
-            <Sparkles className="w-3.5 h-3.5 text-[#FDE68A]" />
-            <span>إحصائيات بالأرقام تمنحك راحة البال</span>
+        {/* Section Header (SuperHi Clean Style) */}
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs sm:text-sm font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+            <span>إحصائيات وأرقام تمنحك الاطمئنان</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] tracking-tight">
             منظومة إشراف ومتابعة حقيقية وراء كل حلقة
           </h2>
 
-          <p className="text-[#D4F1F4] text-xs sm:text-base leading-relaxed">
-            لا نترك الحلقات للصدفة، بل نطبق نموذجاً إشرافياً صارماً يضمن الاستمرارية والالتزام
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            لا نترك الحلقات للصدفة، بل نطبق نموذجاً إشرافياً صارماً يضمن الاستمرارية والإتقان
           </p>
         </div>
 
-        {/* High-Impact Stat Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {/* Clean Stat Counter Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat) => {
             const Icon = stat.icon;
             return (
               <div
                 key={stat.id}
-                className="bg-white/10 backdrop-blur-md border border-white/15 hover:border-[#187A82]/60 rounded-3xl p-7 transition-all duration-300 hover:bg-white/15 hover:-translate-y-1 shadow-lg text-right flex flex-col justify-between"
+                className="bg-white border border-slate-200 rounded-2xl p-6 transition-all duration-300 hover:border-slate-300 hover:shadow-md text-right flex flex-col justify-between"
               >
                 <div>
                   {/* Icon */}
-                  <div className={`w-12 h-12 rounded-2xl ${stat.color} flex items-center justify-center mb-5 shadow-xs`}>
-                    <Icon className="w-6 h-6" />
+                  <div className={`w-11 h-11 rounded-xl ${stat.color} flex items-center justify-center mb-4`}>
+                    <Icon className="w-5 h-5" />
                   </div>
 
-                  {/* Animated Counter Display */}
-                  <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+                  {/* Counter */}
+                  <div className="flex items-baseline gap-1 mb-1">
+                    <span className="text-4xl sm:text-5xl font-black text-[#0F172A] tracking-tight">
                       {stat.prefix}{stat.value}
                     </span>
                   </div>
 
-                  {/* Stat Title */}
-                  <h3 className="text-lg font-bold text-[#A5F3FC] mb-2">
+                  {/* Label */}
+                  <h3 className="text-base font-bold text-slate-800 mb-1.5">
                     {stat.label}
                   </h3>
 
-                  {/* Stat Description */}
-                  <p className="text-[#E6F7F8]/80 text-xs leading-relaxed">
+                  {/* Description */}
+                  <p className="text-slate-500 text-xs leading-relaxed">
                     {stat.description}
                   </p>
                 </div>
 
-                {/* Bottom line */}
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-[11px] text-[#D4F1F4] font-semibold">
+                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-semibold">
                   <span>منظومة متكاملة</span>
-                  <span className="text-[#A5F3FC]">100% موثوق</span>
+                  <span className="text-sky-600 font-bold">100% موثوق</span>
                 </div>
               </div>
             );

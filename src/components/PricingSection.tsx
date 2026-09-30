@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import {
   Check,
   Sparkles,
-  Users,
-  ShieldCheck,
   Star,
-  Clock,
   ArrowLeft
 } from 'lucide-react';
 
@@ -37,7 +34,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
         'متابعة فردية وتشجيع مستمر بنظام النجوم',
         'مرونة في تعويض الحصص عند الإخطار المسبق',
       ],
-      buttonText: 'اشترك الآن في باقة التأسيس',
+      buttonText: 'اشترك في باقة التأسيس',
     },
     {
       id: 'mastery',
@@ -61,7 +58,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
         'أولوية كاملة في تثبيت المواعيد الأكثر ملاءمة',
         'لقاء شهري مباشر مع المشرف التربوي',
       ],
-      buttonText: 'اشترك الآن في باقة الإتقان',
+      buttonText: 'اشترك في باقة الإتقان',
     },
     {
       id: 'nourania',
@@ -77,32 +74,28 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
       isPopular: false,
       features: [
         'حصتان أسبوعياً تركزان على الهجاء والنطق',
-        'مخصصة للقراءة الصحيحة للأطفال الصغار قبل المدرسة',
-        'منهج معتمد (نور البيان / فتح الرحمن / القاعدة النورانية)',
+        'مخصصة للقراءة الصحيحة للأطفال قبل المدرسة',
+        'منهج معتمد (نور البيان / القاعدة النورانية)',
         'تأهيل الطفل لقراءة القرآن الكريم من المصحف مباشرة',
         'بطاقات تعليمية تفاعلية وألعاب كلمات ممتعة',
         'تقرير دوري عن تطور النطق ومخارج الحروف',
       ],
-      buttonText: 'اشترك الآن في باقة النورانية',
+      buttonText: 'اشترك في باقة النورانية',
     },
   ];
 
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-white relative overflow-hidden">
-      {/* Background Subtle Ambience */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#187A82]/6 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#0F4F55]/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="pricing" className="py-16 sm:py-24 bg-white relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6F7F8] text-[#187A82] font-bold text-xs sm:text-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#F59E0B]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs sm:text-sm font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             <span>خطط شفافة تناسب كل أسرة</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F4F55] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F172A] tracking-tight">
             باقات الاشتراك الشهرية
           </h2>
 
@@ -110,48 +103,51 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
             جميع الباقات تتضمن حصصاً فردية 100%، ويمكنك تجربة حصة مجانية أولاً قبل دفع أي رسوم
           </p>
 
-          {/* Sibling Switcher Tabs */}
+          {/* Sibling Switcher Tabs (SuperHi Segmented Pill Style) */}
           <div className="pt-4 flex justify-center">
-            <div className="inline-flex items-center p-1.5 rounded-2xl bg-[#F1F7F8] border border-[#187A82]/15">
+            <div className="inline-flex items-center p-1 rounded-full bg-slate-100 border border-slate-200">
               <button
+                type="button"
                 onClick={() => setSiblingType('single')}
-                className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                   siblingType === 'single'
-                    ? 'bg-white text-[#0F4F55] shadow-sm'
-                    : 'text-slate-600 hover:text-[#0F4F55]'
+                    ? 'bg-white text-[#0F172A] shadow-xs'
+                    : 'text-slate-600 hover:text-[#0F172A]'
                 }`}
               >
                 طالب واحد
               </button>
 
               <button
+                type="button"
                 onClick={() => setSiblingType('two')}
-                className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                   siblingType === 'two'
-                    ? 'bg-white text-[#0F4F55] shadow-sm'
-                    : 'text-slate-600 hover:text-[#0F4F55]'
+                    ? 'bg-white text-[#0F172A] shadow-xs'
+                    : 'text-slate-600 hover:text-[#0F172A]'
                 }`}
               >
                 <span>أخوان (خصم إخوة)</span>
-                <span className="text-[10px] bg-[#FEF3C7] text-[#92400E] px-1.5 py-0.5 rounded-md font-extrabold">وفر</span>
+                <span className="text-[10px] bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded-full font-bold">وفر</span>
               </button>
 
               <button
+                type="button"
                 onClick={() => setSiblingType('three')}
-                className={`px-4 sm:px-5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
                   siblingType === 'three'
-                    ? 'bg-white text-[#0F4F55] shadow-sm'
-                    : 'text-slate-600 hover:text-[#0F4F55]'
+                    ? 'bg-white text-[#0F172A] shadow-xs'
+                    : 'text-slate-600 hover:text-[#0F172A]'
                 }`}
               >
                 <span>3 إخوة (عائلي)</span>
-                <span className="text-[10px] bg-[#DCFCE7] text-[#15803D] px-1.5 py-0.5 rounded-md font-extrabold">أقصى توفير</span>
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full font-bold">أقصى توفير</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* 3 Clean Pricing Cards */}
+        {/* 3 Clear Pricing Cards with 'الأكثر طلباً' highlighted cleanly */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {plans.map((plan) => {
             const isFeatured = plan.isPopular;
@@ -159,16 +155,16 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
             return (
               <div
                 key={plan.id}
-                className={`relative rounded-3xl transition-all duration-300 flex flex-col justify-between p-7 sm:p-8 ${
+                className={`relative rounded-2xl transition-all duration-300 flex flex-col justify-between p-7 sm:p-8 bg-white border ${
                   isFeatured
-                    ? 'bg-white border-2 border-[#187A82] shadow-[0_20px_50px_rgba(24,122,130,0.18)] lg:-translate-y-2 ring-4 ring-[#187A82]/10'
-                    : 'bg-[#F8FAFB] hover:bg-white border border-[#187A82]/15 shadow-sm hover:shadow-xl'
+                    ? 'border-sky-500 shadow-md ring-2 ring-sky-500/20 lg:-translate-y-2'
+                    : 'border-slate-200 shadow-sm hover:shadow-md hover:border-slate-300'
                 }`}
               >
                 {/* Popular Badge */}
                 {isFeatured && plan.popularBadge && (
-                  <div className="absolute -top-4 right-1/2 translate-x-1/2 bg-[#187A82] text-white text-xs font-black px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
-                    <Star className="w-3.5 h-3.5 fill-current text-[#FDE68A]" />
+                  <div className="absolute -top-3.5 right-1/2 translate-x-1/2 bg-sky-600 text-white text-xs font-bold px-4 py-1 rounded-full shadow-sm flex items-center gap-1.5 whitespace-nowrap">
+                    <Star className="w-3.5 h-3.5 fill-current text-amber-300" />
                     <span>{plan.popularBadge}</span>
                   </div>
                 )}
@@ -176,10 +172,10 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
                 <div>
                   {/* Title & Target */}
                   <div className="mb-4">
-                    <span className="text-xs font-bold text-[#187A82] bg-[#E6F7F8] px-3 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-sky-700 bg-sky-50 px-3 py-1 rounded-full border border-sky-100">
                       {plan.target}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-[#0F4F55] mt-3">
+                    <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] mt-3">
                       {plan.title}
                     </h3>
                     <p className="text-slate-500 text-xs sm:text-sm mt-1">
@@ -188,22 +184,22 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
                   </div>
 
                   {/* Price */}
-                  <div className="my-6 py-5 border-y border-slate-100 flex items-baseline justify-start gap-2">
-                    <span className="text-3xl sm:text-4xl font-extrabold text-[#0F4F55]">
+                  <div className="my-5 py-4 border-y border-slate-100 flex items-baseline justify-start gap-2">
+                    <span className="text-3xl sm:text-4xl font-black text-[#0F172A]">
                       {plan.pricing[siblingType]}
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-slate-500">
+                    <span className="text-xs sm:text-sm font-medium text-slate-500">
                       / {plan.period}
                     </span>
                   </div>
 
                   {/* Features List */}
-                  <div className="space-y-3.5 mb-8">
+                  <div className="space-y-3 mb-8">
                     <p className="text-xs font-bold text-slate-400">مميزات الباقة تشمل:</p>
                     {plan.features.map((feature, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-right text-xs sm:text-sm text-slate-700">
                         <div className={`w-5 h-5 rounded-full shrink-0 flex items-center justify-center mt-0.5 ${
-                          isFeatured ? 'bg-[#187A82] text-white' : 'bg-[#E6F7F8] text-[#187A82]'
+                          isFeatured ? 'bg-sky-600 text-white' : 'bg-sky-50 text-sky-600'
                         }`}>
                           <Check className="w-3 h-3 stroke-[3]" />
                         </div>
@@ -213,14 +209,15 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
                   </div>
                 </div>
 
-                {/* Card CTA: اشترك الآن */}
+                {/* Card CTA: Pill Button */}
                 <div>
                   <button
+                    type="button"
                     onClick={() => onOpenBooking(plan.title)}
-                    className={`w-full py-4 px-6 rounded-2xl font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-300 active:scale-98 cursor-pointer ${
+                    className={`w-full py-3.5 px-6 rounded-full font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-200 active:scale-98 cursor-pointer ${
                       isFeatured
-                        ? 'bg-[#187A82] hover:bg-[#13666D] text-white shadow-[0_10px_25px_rgba(24,122,130,0.35)] hover:shadow-[0_14px_30px_rgba(24,122,130,0.45)]'
-                        : 'border-2 border-[#187A82]/30 hover:border-[#187A82] bg-white hover:bg-[#E6F7F8]/40 text-[#0F4F55]'
+                        ? 'bg-sky-600 hover:bg-sky-700 text-white shadow-sm hover:shadow-md'
+                        : 'border border-slate-300 hover:border-slate-400 bg-white hover:bg-slate-50 text-slate-700'
                     }`}
                   >
                     <span>{plan.buttonText}</span>
@@ -228,28 +225,12 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenBooking })
                   </button>
 
                   <p className="text-center text-[11px] text-slate-400 mt-2.5">
-                    حصة تجريبية مجانية أولاً قبل تثبيت الاشتراك
+                    حصة تجريبية مجانية 100% قبل دفع أي اشتراك
                   </p>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Reassurance Footer */}
-        <div className="mt-12 text-center text-xs sm:text-sm text-slate-500 flex flex-wrap items-center justify-center gap-6">
-          <span className="flex items-center gap-1.5">
-            <ShieldCheck className="w-4 h-4 text-[#187A82]" />
-            <span>ضمان استرداد أو استبدال المعلم في أي وقت</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Clock className="w-4 h-4 text-[#187A82]" />
-            <span>تعويض الحصص عند الإخطار قبلها بـ 24 ساعة</span>
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Users className="w-4 h-4 text-[#187A82]" />
-            <span>إمكانية اختيار معلم ذكر للبنين أو معلمة للبنات</span>
-          </span>
         </div>
 
       </div>

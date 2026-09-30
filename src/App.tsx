@@ -30,7 +30,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB] text-[#0F4F55] font-['Alexandria',sans-serif] selection:bg-[#E6F7F8] selection:text-[#187A82] antialiased">
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-['Alexandria',sans-serif] selection:bg-sky-100 selection:text-sky-800 antialiased">
       {/* 1. Header / Navbar (Sticky & Glassmorphic) */}
       <Header
         onOpenBooking={() => handleOpenBooking()}

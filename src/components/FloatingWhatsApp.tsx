@@ -4,7 +4,7 @@ import { getWhatsAppUrl } from '../utils/whatsapp';
 
 export const FloatingWhatsApp: React.FC = () => {
   return (
-    <aside className="fixed bottom-6 left-6 z-40 flex items-center group">
+    <aside className="fixed bottom-6 left-6 z-50 flex items-center group pointer-events-auto">
       <a
         href="https://wa.me/201065263121?text=السلام%20عليكم،%20أود%20الاستفسار%20عن%20حجز%20حصة%20تجريبية%20لطفلي%20في%20أكاديمية%20المسلم%20الصغير"
         target="_blank"
