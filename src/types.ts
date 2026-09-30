@@ -7,6 +7,8 @@ export interface Teacher {
   bio: string;
   specialties: string[];
   image: string;
+  experienceYears?: string;
+  isOnline?: boolean;
 }
 
 export interface PricingPlan {
@@ -30,11 +32,11 @@ export interface ClassSample {
   id: string;
   title: string;
   categoryBadge: string;
-  categoryType: 'boys' | 'girls' | 'interactive';
-  teacherName: string;
-  studentAge: string;
+  categoryType: string;
+  teacherName?: string;
+  studentAge?: string;
   description: string;
-  highlightTag: string;
+  highlightTag?: string;
   image: string;
   videoUrl: string;
   videoPreviewUrl?: string;

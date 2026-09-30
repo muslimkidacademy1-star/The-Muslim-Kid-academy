@@ -1,9 +1,12 @@
 import { ACADEMY_CONFIG } from '../data/academyData';
 import { BookingFormData } from '../types';
 
+export const OFFICIAL_WHATSAPP_LINK =
+  'https://wa.me/201065263121?text=السلام%20عليكم،%20أود%20الاستفسار%20عن%20حجز%20حصة%20تجريبية%20لطفلي%20في%20أكاديمية%20المسلم%20الصغير';
+
 export function getWhatsAppUrl(customText?: string): string {
   const baseNumber = ACADEMY_CONFIG.whatsappRaw;
-  const defaultMessage = 'السلام عليكم، أرغب في حجز حصة تجريبية مجانية لطفلي في أكاديمية المسلم الصغير';
+  const defaultMessage = 'السلام عليكم، أود الاستفسار عن حجز حصة تجريبية لطفلي في أكاديمية المسلم الصغير';
   const text = customText || defaultMessage;
   return `https://wa.me/${baseNumber}?text=${encodeURIComponent(text)}`;
 }

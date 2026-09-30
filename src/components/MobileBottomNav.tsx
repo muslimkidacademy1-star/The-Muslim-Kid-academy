@@ -45,7 +45,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
             </span>
           </div>
           <a
-            href={getWhatsAppUrl('مرحباً، أود حجز حصة تجريبية مجانية لطفلي عبر زووم في أكاديمية المسلم الصغير')}
+            href="https://wa.me/201065263121?text=السلام%20عليكم،%20أود%20الاستفسار%20عن%20حجز%20حصة%20تجريبية%20لطفلي%20في%20أكاديمية%20المسلم%20الصغير"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-full bg-[#f59e0b] text-[#451a03] hover:bg-[#d97706] font-black text-xs flex items-center gap-1.5 shadow-xs active:scale-95 transition-transform"

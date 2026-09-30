@@ -51,7 +51,7 @@ export const FinalCta: React.FC = () => {
           </p>
 
           <a
-            href={getWhatsAppUrl(customWhatsAppText)}
+            href="https://wa.me/201065263121?text=السلام%20عليكم،%20أود%20الاستفسار%20عن%20حجز%20حصة%20تجريبية%20لطفلي%20في%20أكاديمية%20المسلم%20الصغير"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 w-full py-4.5 px-6 rounded-2xl bg-[#f59e0b] hover:bg-[#d97706] text-[#451a03] font-black text-base shadow-[0_12px_28px_-6px_rgba(245,158,11,0.4)] hover:shadow-[0_16px_32px_-6px_rgba(217,119,6,0.5)] transition-all transform hover:scale-[1.01] active:scale-95 cursor-pointer"

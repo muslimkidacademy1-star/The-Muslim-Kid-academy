@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 140" width="100%" height="100%" fill="none">
+  <!-- Official Academy Logo: Horizontal Lockup (Teal #187A82) -->
+  <g fill="#187A82">
+    <!-- Arabic Typography: "المسلم الصغير" -->
+    <text
+      x="250"
+      y="84"
+      text-anchor="middle"
+      font-family="'Readex Pro', 'IBM Plex Sans Arabic', 'Tajawal', sans-serif"
+      font-weight="900"
+      font-size="64"
+      letter-spacing="-1px"
+      fill="#187A82"
+      style="user-select: none;"
+    >المسلم الصغير</text>
+
+    <!-- Distinctive dots for the letter (ياء) in الصغير -->
+    <circle cx="168" cy="106" r="5" fill="#187A82" />
+    <circle cx="184" cy="106" r="5" fill="#187A82" />
+
+    <!-- English Subtitle: "The Muslim Kid" (Positioned under الصغير) -->
+    <text
+      x="176"
+      y="126"
+      text-anchor="middle"
+      font-family="'Readex Pro', 'IBM Plex Sans Arabic', system-ui, sans-serif"
+      font-weight="700"
+      font-size="14.5"
+      letter-spacing="0.5px"
+      fill="#187A82"
+      style="user-select: none;"
+    >The Muslim Kid</text>
+  </g>
+</svg>
